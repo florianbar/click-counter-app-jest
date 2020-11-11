@@ -34,7 +34,9 @@ test("renders counter display", () => {
 });
 
 test("counter starts at 0", () => {
-
+  const wrapper = setup();
+  const countValue = findByTestAttr(wrapper, "count").text();
+  expect(countValue).toBe("0");
 });
 
 test("clicking on button increments counter display", () => {
