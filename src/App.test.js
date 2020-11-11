@@ -1,8 +1,27 @@
-import { render, screen } from '@testing-library/react';
+import Enzyme, { shallow } from 'enzyme';
+import EnzymeAdaptor from '@wojtekmaj/enzyme-adapter-react-17';
+
 import App from './App';
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+// Setup enzyme's react adaptor
+Enzyme.configure({ adaptor: new EnzymeAdaptor() });
+
+test("renders without error", () => {
+
+});
+
+test("renders button", () => {
+
+});
+
+test("renders counter display", () => {
+  
+});
+
+test("counter starts at 0", () => {
+
+});
+
+test("clicking on button increments counter display", () => {
+
 });
