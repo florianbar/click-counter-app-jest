@@ -40,5 +40,15 @@ test("counter starts at 0", () => {
 });
 
 test("clicking on button increments counter display", () => {
+  const wrapper = setup();
 
+  // 1. Find the button
+  const button = findByTestAttr(wrapper, "increment-button");
+
+  // 2. Click the button
+  button.simulate("click");
+
+  // 3. Find display, and test that number has benn incremented
+  const countValue = findByTestAttr(wrapper, "count").text();
+  expect(countValue).toBe("1");
 });
